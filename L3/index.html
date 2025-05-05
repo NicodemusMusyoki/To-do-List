@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Navigation</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .content {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="menu">
+        <ul>
+            <li><a href="#" onclick="showPage('home')">Home Page</a></li>
+            <li><a href="#" onclick="showPage('early-pregnancies')">Early Pregnancies</a></li>
+            <li><a href="#" onclick="showPage('stis-hiv')">STIs and HIV/AIDS</a></li>
+            <li><a href="#" onclick="showPage('quizzes')">Quizzes</a></li>
+            <li><a href="#" onclick="showPage('forum')">Discussion Forum</a></li>
+        </ul>
+    </div>
+</div>
+    <div id="home" class="content active">
+        <h1>Welcome to the Home Page</h1>
+    </div>
+    
+    <div id="early-pregnancies" class="content">
+        <h1>Early Pregnancies Information</h1>
+        <p>This page contains information about early pregnancies.</p>
+    </div>
+    
+    <div id="stis-hiv" class="content">
+        <h1>STIs and HIV/AIDS</h1>
+        <p>Information about STIs and HIV/AIDS.</p>
+    </div>
+    
+    <div id="quizzes" class="content">
+        <h1>Quizzes</h1>
+        <p>Take a quiz here!</p>
+    </div>
+    
+    <div id="forum" class="content">
+        <h1>Discussion Forum</h1>
+        <p>Join the discussion here.</p>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            // Hide all content
+            document.querySelectorAll('.content').forEach(page => {
+                page.classList.remove('active');
+            });
+
+            // Show selected content
+            document.getElementById(pageId).classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
