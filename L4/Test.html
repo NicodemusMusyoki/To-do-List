@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HIV/AIDS Risk Self-Assessment</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .question {
+      margin-bottom: 15px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>HIV/AIDS Risk Self-Assessment</h2>
+
+  <div class="question">
+    <label>1. Have you had unprotected sex recently?</label><br>
+    <input type="radio" name="q1" value="yes"> Yes
+    <input type="radio" name="q1" value="no"> No
+  </div>
+
+  <div class="question">
+    <label>2. Have you shared needles or injection equipment?</label><br>
+    <input type="radio" name="q2" value="yes"> Yes
+    <input type="radio" name="q2" value="no"> No
+  </div>
+
+  <div class="question">
+    <label>3. Have you had symptoms like fever, rash, or sore throat?</label><br>
+    <input type="radio" name="q3" value="yes"> Yes
+    <input type="radio" name="q3" value="no"> No
+  </div>
+
+  <button onclick="calculateRisk()">Submit</button>
+
+  <div id="result"></div>
+
+  <script>
+    function calculateRisk() {
+      let score = 0;
+      const questions = ['q1', 'q2', 'q3'];
+
+      questions.forEach(q => {
+        const answer = document.querySelector('input[name="'+q+'"]:checked');
+        if (answer && answer.value === 'yes') {
+          score++;
+        }
+      });
+
+      let resultText = "";
+
+      if (score === 0) {
+        resultText = "Low Risk: Continue practicing safe behaviors.";
+      } else if (score === 1) {
+        resultText = "Moderate Risk: Consider getting tested.";
+      } else {
+        resultText = "High Risk: Please visit a healthcare facility for proper testing.";
+      }
+
+      document.getElementById('result').innerText = resultText;
+    }
+  </script>
+
+</body>
+</html>
