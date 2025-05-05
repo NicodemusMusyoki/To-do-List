@@ -1,0 +1,52 @@
+body{
+    background-color: aquamarine;
+}
+nav{
+    background-color:blanchedalmond;
+    width: 1200px;
+    height: 20px;
+}
+a nav{
+    padding: 20px;
+    margin-left: 100px;
+    color:black;
+}
+
+a:hover{
+    color: goldenrod;
+}
+
+
+h2{
+    font-family: monospace;
+    color: blue;
+    text-transform: capitalize;
+    font-size: 30px;
+    text-align: center;
+
+}
+h2:hover{
+  color: red;
+}
+
+#par{
+    color: blue;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    
+    
+}
+#par:hover{
+    color:red;
+}
+
+.content{
+    padding: 20px;
+    content: normal;
+    padding:250px;
+    font-size: 20px;
+    background-color:#ddd;
+    line-height: 25px;
+
+}
